@@ -4,3 +4,17 @@
  e17120be-7303-4183-9039-a87b3368d3fd | {f6fbf846-c1e9-4e58-818a-baf988a5306f,e17120be-7303-4183-9039-a87b3368d3fd,b6a4c619-1c97-47be-9da8-0aabfc0ff351,65bbc6fb-b514-4aa3-b3c3-b01ab5649711,32196673-ff72-4852-a7cf-b7292023e1d3}
  7814da16-593a-4c98-bf8c-6194d7f2abab | {7814da16-593a-4c98-bf8c-6194d7f2abab,15644074-65ea-416f-b331-f418031e008f,7d1a646b-25e5-4adb-a135-0e36fbeb52f3,540411f8-89e9-4d0f-8164-b1dee124c9c6,d8489151-e363-47bd-bbdf-f167dc04a813}
  d8489151-e363-47bd-bbdf-f167dc04a813 | {d8489151-e363-47bd-bbdf-f167dc04a813,540411f8-89e9-4d0f-8164-b1dee124c9c6,7814da16-593a-4c98-bf8c-6194d7f2abab,11aefee3-e7fe-4973-abdd-af23cf99543a,15644074-65ea-416f-b331-f418031e008f}
+
+
+
+.env 
+
+
+DB_NAME='service'
+DB_USER='service'
+DB_PASSWORD='service'
+XML_FILE='elektronika_products_20240923_200913.xml'
+
+
+
+!!!!! не доработанные запрос , при повторном запуске файла элементы добавятся к существующим !!!!
