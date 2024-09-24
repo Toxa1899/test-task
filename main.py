@@ -9,7 +9,8 @@ from service.xml_parser import MarketplaceXMLParser
 
 if __name__ == '__main__':
     logger.info('Запуск парсинга')
-    mark = MarketplaceXMLParser(xml_file=config('PATH'))
+    print(config('PATH'))
+    mark = MarketplaceXMLParser(xml_file=config('XML_FILE'))
     pg_client = PostgresClient(dbname=config('DB_NAME'), user=config('DB_USER'), password=config('DB_PASSWORD'))
     count_pars = 0  
     for offer in mark.parse_offers():
