@@ -3,7 +3,7 @@ from elasticsearch.helpers import bulk
 import psycopg2
 from psycopg2 import sql
 from decouple import config
-
+from loguru import logger
 import uuid
 
 
@@ -33,7 +33,7 @@ class ElasticsearchAndUpdateSimilarSku:
 
             
             if not title or not brand:
-                print(f"Пропускаем продукт с UUID {uuid_id} из-за пустых значений: title='{title}', brand='{brand}'")
+                logger.info(f"Пропускаем продукт с UUID {uuid_id} из-за пустых значений: title='{title}', brand='{brand}'")
                 continue  
 
             query = {
@@ -50,7 +50,7 @@ class ElasticsearchAndUpdateSimilarSku:
             # Поиск товаров
             try:
                 response = self.es.search(index='products', body=query)
-                print(response)
+               
                 similar_skus = [hit['_source']['uuid'] for hit in response['hits']['hits'][:5]]
 
                 for s in similar_skus:
@@ -69,7 +69,7 @@ class ElasticsearchAndUpdateSimilarSku:
                     )
 
             except Exception as e:
-                print(f"Ошибка при выполнении поиска для продукта с UUID {uuid_id}: {e}")
+                logger.info(f"Ошибка при выполнении поиска для продукта с UUID {uuid_id}: {e}")
 
            
         self.connection.commit()
