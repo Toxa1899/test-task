@@ -7,14 +7,3 @@
 
 
 
-.env 
-
-
-DB_NAME='service'
-DB_USER='service'
-DB_PASSWORD='service'
-XML_FILE='elektronika_products_20240923_200913.xml'
-
-
-
-!!!!! не доработанные запрос , при повторном запуске файла элементы добавятся к существующим !!!!
